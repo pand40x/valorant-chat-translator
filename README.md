@@ -63,7 +63,7 @@ Başarıda tiz, hatada pes bir bip sesi duyarsınız. Konsolda `[TR]` ve `[EN]` 
 |---|---|---|
 | `api.key` | DeepSeek API anahtarı | — |
 | `api.model` | Model | `deepseek-chat` |
-| `api.temperature` | Yaratıcılık (1.0 tutarlı, 1.3 DeepSeek çeviri önerisi) | `1.0` |
+| `api.temperature` | Düşük = daha tutarlı/sabit çıktı (bkz. sıcaklık kıyası) | `0.3` |
 | `translation.source_lang` / `target_lang` | Çeviri yönü | `Turkish` → `English` |
 | `hotkey.translate` | Kısayol (`f8`, `f9`, `ctrl+space`...) | `f8` |
 | `hotkey.suppress` | Tuşu oyuna iletme | `true` |
@@ -107,6 +107,12 @@ Kendi dosyanızla da çalışır (ör. taktiksel set): `batch_translate.py tests
 
 Son toplu ölçüm: **790 satır / 770 benzersiz çağrı, ort. ~1.2 sn gecikme, 0 otomatik işaret.**
 Karmaşık taktiksel cümlelerde (oyala / zaman kazan / bait / default okuma) kalite **~9.7/10**.
+
+### Sıcaklık kıyası
+
+`temp_compare.py` aynı cümleyi farklı sıcaklıklarda tekrar tekrar çevirip çıktı kararlılığını ölçer
+(`tests/temp_compare.md`). Sonuç: kalite 0.3 / 0.7 / 1.0'da **eşit**, ama **0.3 en tutarlı**
+(aynı cümlede en sık çıktı oranı %60 vs 1.0'da %29). Bu yüzden varsayılan `temperature = 0.3`.
 
 ---
 
