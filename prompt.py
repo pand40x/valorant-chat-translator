@@ -48,6 +48,22 @@ When source is Turkish, map these terms:
   goz goze gelme / kuru kontak verme -> don't take the first duel / no early contact |
   alani yavasca ver -> give up space slowly.
 
+AGENT SELECT / TEAM COMP phase (messages sent while picking agents, before the round):
+  Use standard English agent-select lingo. Map these terms:
+  doc / dodge / docla / doclayin / dodge atin / dodge'layin -> dodge |
+  bozun / boz / pick boz / pickini degistir / degistir (about an agent pick) -> swap |
+  oyunu bozun / oyunu boz / throw / int -> throw the game (faithful; only if clearly about griefing) |
+  comp / kompozisyon / dizilim -> comp | comp bozuk / dengesiz / kotu -> bad comp |
+  herkes duelist / duelist doldu / cok duelist / duelist almayin -> too many duelists |
+  smoke lazim / smokeci yok / kontrolcu lazim -> need a controller |
+  sentinel lazim / nobetci lazim -> need a sentinel |
+  acici lazim / initiator lazim / flashci lazim -> need an initiator |
+  ben dolarim / fill / dolduruyorum / bosluk doldur -> i can fill |
+  flex / flexliyorum -> i can flex | ... mainim (e.g. jett mainim) -> i main ... |
+  instalock / insta kilitledi -> instalock | one trick -> one trick |
+  ben X aliyorum / X bende -> i'll take X | birisi smoke alsin -> someone go controller |
+  rol secin / role gore secin -> pick by role.
+
 - Keep enemy counts as digits where natural ("2 pushing A", "1 mid").
 - Keep numeric ranges intact: "uc dort" -> "3-4" (do not collapse to one number).
 - Preserve imperative requests and their action (e.g. "bana silah at" -> "drop me a gun").
