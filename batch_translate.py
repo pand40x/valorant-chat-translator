@@ -112,9 +112,16 @@ def main():
         print("[HATA] config.ini icinde API anahtari yok.")
         sys.exit(1)
 
+    in_path = sys.argv[1] if len(sys.argv) > 1 else PHRASES
+    base = os.path.basename(in_path)
+    out_path = (sys.argv[2] if len(sys.argv) > 2 else
+                os.path.join(os.path.dirname(in_path) or ".",
+                             base.replace("phrases", "results").replace(".txt", ".md")))
+
     system = build_system_prompt("Turkish", "English")
-    items = parse_phrases(PHRASES)
+    items = parse_phrases(in_path)
     uniq = sorted({tr for _, tr in items})
+    show_all = len(items) <= 80
     print("Toplam satir: {}  |  Benzersiz: {}  |  Model: {}  |  Temp: {}".format(
         len(items), len(uniq), cfg["model"], cfg["temp"]))
     print("Eszamanli ceviri ({} worker)...".format(WORKERS))
@@ -157,11 +164,12 @@ def main():
     print("  Isaretli     : {} / {} satir".format(len(all_flags), len(items)))
 
     # Kategori basina kisa ornek
-    print("\n--- Kategori ornekleri (her birinden 2) ---")
+    head = "tumu" if show_all else "her birinden 2"
+    print("\n--- Kategori ciktilari ({}) ---".format(head))
     for cat in by_cat:
         rows = by_cat[cat]
         print("\n[{}]  ({} satir)".format(cat, len(rows)))
-        for tr, out, ms, fl in rows[:2]:
+        for tr, out, ms, fl in (rows if show_all else rows[:2]):
             tag = ("  <" + ",".join(fl) + ">") if fl else ""
             print("   TR: {}\n   EN: {}{}".format(tr, out, tag))
 
@@ -171,8 +179,8 @@ def main():
         for cat, tr, out, fl in all_flags:
             print("   [{}] <{}>  TR: {}  |  EN: {}".format(cat, ",".join(fl), tr, out))
 
-    # results.md yaz
-    with open(RESULTS, "w", encoding="utf-8") as f:
+    # sonuc dosyasi yaz
+    with open(out_path, "w", encoding="utf-8") as f:
         f.write("# Toplu Ceviri Sonuclari\n\n")
         f.write("- Model: `{}`  |  Temperature: `{}`\n".format(cfg["model"], cfg["temp"]))
         f.write("- Toplam satir: {}  |  Benzersiz cagri: {}\n".format(len(items), len(uniq)))
@@ -184,7 +192,7 @@ def main():
             for tr, out, ms, fl in by_cat[cat]:
                 f.write("| {} | {} | {:.0f} | {} |\n".format(
                     tr.replace("|", "\\|"), out.replace("|", "\\|"), ms, " ".join(fl)))
-    print("\nKaydedildi: tests/results.md")
+    print("\nKaydedildi: " + out_path)
 
 
 if __name__ == "__main__":

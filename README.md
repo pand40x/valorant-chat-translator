@@ -103,7 +103,10 @@ Son ölçüm: genel **~9.5/10** çeviri kalitesi, ortalama **~1.3 sn** gecikme. 
 .venv\Scripts\python.exe batch_translate.py
 ```
 
+Kendi dosyanızla da çalışır (ör. taktiksel set): `batch_translate.py tests/tactical_phrases.txt`
+
 Son toplu ölçüm: **790 satır / 770 benzersiz çağrı, ort. ~1.2 sn gecikme, 0 otomatik işaret.**
+Karmaşık taktiksel cümlelerde (oyala / zaman kazan / bait / default okuma) kalite **~9.7/10**.
 
 ---
 

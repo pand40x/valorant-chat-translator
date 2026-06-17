@@ -1,0 +1,64 @@
+# oyalama-zaman-kazanma
+site girdiklerinde görünmeyin, sadece saklanın, zaman kazanıp oyalayın
+hemen peek atmayın, spike'ı ekmelerini bekleyin, rotasyon gelince beraber alırız
+defuse'a basma, zamanı yedir, ben heaven'dan geliyorum birlikte temizleriz
+açılışta göz göze gelmeyin, util harcatın, mümkün olduğunca geç ölün
+tek başına savunmaya kalkma, alanı yavaşça ver ama her köşede biraz oyala
+onları farklı açılardan sürekli rahatsız et, push'larını yavaşlat ama trade yeme
+spike kurulduktan sonra ortaya çıkma, zaman bizden yana, sabırlı oyna
+molly ve flash'ları defuse anına saklayın, son saniyede iptal ettiririz
+adam siteye girdi ama acele etme, onu içeride tut, rotasyon yetişene kadar ölme
+defuse'a oynuyormuş gibi yapıp geri çekil ki kit'ini boşa harcasın
+
+# bait-feda-trade
+ben önden girip util çekeceğim, hemen arkamdan gelip trade'leyin
+duelist en önde açılışı çeksin, biz ikinci dalga temiz girelim
+lurk'ü besleyin, ben arkadan sesleri çekeyim siz ortadan basın
+ilk peek'i feda etme, beraber wide swing atıp aynı anda ateş açalım
+sentinel'i yem olarak harcamayın, info için yavaş oynasın yeter
+
+# default-kontrol-okuma
+önce ortayı alalım, sonra rotasyonlarına göre zayıf siteye yükleniriz
+ilk 30 saniye bilgi toplayalım, agresif çıkmadan onların hatasını bekleyelim
+ekonomilerini gördük, force atmışlar, yakın dövüşe zorlayıp util'lerini boşa çıkaralım
+aynı taktiği üçüncü kez yapıyorlar, bu sefer mid'i kapatıp flank'i keselim
+spike'ı erken düşürmeyin, önce kontrolü alıp güvenli plant'a oynayalım
+retake'e güveniyorlar, o yüzden hızlı execute yerine yavaş yorucu bir round oynayalım
+
+# post-plant-crossfire
+plant sonrası dağılın, biri long biri short tutsun, asla aynı yerde durmayın
+defuse sesini duyunca hep birlikte swing atalım, tek tek gidip ölmeyelim
+spike'ı görüş alanında tutun ama açıktan oynamayın, çapraz ateş kuralım
+ben flank'i bekliyorum, siz spike'a oynayın, arkadan gelen olursa söylerim
+molly'i defuse tam yarılanınca atın ki maksimum zaman kaybettirsin
+
+# retake-koordinasyon
+geri çekilip retake'i bekleyin, util tamamlanmadan kuru girmeyin
+önce yakın köşeleri temizleyelim, sonra açık alana beraber yüklenelim
+ulti'leri retake için saklayın, hepsini aynı anda kullanıp alanı boşaltırız
+zaman azaldıysa risk alıp dağınık girin, bol zaman varsa sabırlı temizleyin
+spike'ın yerini öğrenin, defuse hattını util ile kesip oradan başlayalım
+
+# lurk-flank-bilgi
+ben sessizce arkadan dolaşıp rotasyonlarını keseceğim, siz baskıyı koruyun
+flank'ten ayak sesi geliyor, bir kişi dönüp baksın diğerleri spike'a oynasın
+ben lurk'teyim, mid'e rotasyon atarlarsa arkadan yakalar haber veririm
+onları sürekli iki taraftan düşündürelim ki net karar veremesinler
+
+# clutch-karar
+teke tek düşürmeye çalış, kalabalık açılara kuru peek atma, zamanı kullan
+fake defuse başlat, ses gelince bırak, panikleyip açılırsa cezalandır
+zaman varsa bekle, yoksa util harcatıp kör edip gir
+silah sesini gizle, reload yapma, köşeyi temizleyince basıp al
+
+# ekonomi-mantik
+bu round save, ama biri sheriff'le agresif oynayıp bonus deneyebilir
+yarım satın alma yapmayalım, ya tam force ya tam save, ortada kalmayalım
+kaybedersek gelecek round full buy olur, o yüzden bu round silahları kurtaralım
+onların eco'su geldi, full almayın, light shield'la yakın oynamak yeterli
+
+# anti-strat-combo
+her round aynı yerden flash'lıyorlar, bu sefer flash'ı bekleyip patlayınca peek atalım
+breach stun atınca neon hemen dalıyor, stun'ı duyunca geri çekilip trade kuralım
+viper duvarı kalkınca hemen girmeyin, toxin azalınca girin yoksa kör savaşırsınız
+sova recon'u plant'tan önce çekelim ki bilgi taze olsun, erken harcamayalım

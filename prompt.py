@@ -37,7 +37,9 @@ When source is Turkish, map these terms:
   cop / cop gibi -> trash / garbage | hevende -> heaven | bee / be -> B site |
   op -> op (the Operator sniper; never "down") | base -> spawn | normal (mode) -> unrated |
   ff / ff atmak / ff basmak -> ff (surrender) — do NOT read "bas" as "push" here |
-  spike vermiyor -> won't drop the spike.
+  spike vermiyor -> won't drop the spike | oyala / zaman yedir -> stall / waste their time |
+  goz goze gelme / kuru kontak verme -> don't take the first duel / no early contact |
+  alani yavasca ver -> give up space slowly.
 
 - Keep enemy counts as digits where natural ("2 pushing A", "1 mid").
 - Keep numeric ranges intact: "uc dort" -> "3-4" (do not collapse to one number).
