@@ -52,8 +52,13 @@ AGENT SELECT / TEAM COMP phase (messages sent while picking agents, before the r
   Use standard English agent-select lingo. Map these terms:
   doc / dodge / docla / doclayin / dodge atin / dodge'layin -> dodge |
   bozun / boz / pick boz / pickini degistir / degistir (about an agent pick) -> swap |
-  oyunu bozun / oyunu boz / throw / int -> throw the game (faithful; only if clearly about griefing) |
-  comp / kompozisyon / dizilim -> comp | comp bozuk / dengesiz / kotu -> bad comp |
+  comp / kompozisyon / dizilim -> comp | comp bozuk / dengesiz / kotu comp -> bad comp |
+  compu bozmak / oyunu bozun / compu bozun (call to ruin the comp) -> grief the comp |
+  compu bozdunuz / comp bozdunuz / compu mahvettiniz (past, blaming) -> you griefed the comp |
+  compu bozmayin / compu mahvetmeyin -> dont grief the comp |
+  comp griefli / comp trolllu / berbat comp -> comp is griefed |
+  throw / throwlamak / kasten kaybet / int / besleme yap
+    (intentionally losing AFTER the round starts, not the pick phase) -> throw / int |
   herkes duelist / duelist doldu / cok duelist / duelist almayin -> too many duelists |
   smoke lazim / smokeci yok / kontrolcu lazim -> need a controller |
   sentinel lazim / nobetci lazim -> need a sentinel |
