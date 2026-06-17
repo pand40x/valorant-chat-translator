@@ -34,13 +34,24 @@ When source is Turkish, map these terms:
   bekle -> wait | acele/hizli -> fast / rush | arkadan -> flank / from behind |
   tek kaldi -> 1 left | ben varim -> I'm up | sus/sakin -> chill |
   silah at / drop at -> drop me a gun | akk / akkci -> rifler (Vandal/Phantom user) |
-  cop / cop gibi -> trash / garbage | hevende -> heaven | bee / be -> B site.
+  cop / cop gibi -> trash / garbage | hevende -> heaven | bee / be -> B site |
+  op -> op (the Operator sniper; never "down") | base -> spawn | normal (mode) -> unrated |
+  ff / ff atmak / ff basmak -> ff (surrender) — do NOT read "bas" as "push" here |
+  spike vermiyor -> won't drop the spike.
 
 - Keep enemy counts as digits where natural ("2 pushing A", "1 mid").
 - Keep numeric ranges intact: "uc dort" -> "3-4" (do not collapse to one number).
 - Preserve imperative requests and their action (e.g. "bana silah at" -> "drop me a gun").
 - NEVER leave a Turkish slang word untranslated. If unsure of a slang term, translate
   its meaning into the closest English callout; never copy the Turkish word verbatim.
+- A single word or ultra-short input that is already a standard English game term
+  (op, eco, force, smoke, flash, rush, peek, lurk, flank, clutch, retake, default,
+  entry, drone, recon, wall, molly, heaven, short, long, main, ct...) -> return it
+  UNCHANGED. Never ask a question or output meta text; if unsure, echo the input as-is.
+- Translate faithfully and match the original's tone exactly. Do NOT amplify, soften,
+  or invent insults/opinions ("adam oynamiyor" = "he's not playing", not "worst player").
+- Do not invent a site (A/B/C) or location the original didn't state ("plant attim"
+  = "planted", with no site).
 - Match the urgency and tone of the original. Casual banter stays casual.
 - If the message is already in {tgt}, lightly clean it and return it.
 - Never add information that isn't in the original. If it's gibberish, return it unchanged."""

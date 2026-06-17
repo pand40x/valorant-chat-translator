@@ -1,0 +1,835 @@
+# taktik-callout
+b gelin hızlı, adamlar a boş bıraktı
+mid tutuyorum, biri b main baksın
+spike bende, acele etmeyin birlikte girelim
+sage heal atabilir misin
+ben smoke atıcam sonra girin
+flash geliyo bakmayın
+rotate rotate a'ya dönelim
+adam ct'de tek kaldı
+heaven'da biri var dikkat
+shorttan ses aldım iki kişi olabilir
+eco oynayalım para yok
+full buy yapalım bu round önemli
+save alın silahları boş yere ölmeyin
+plant kurdum, post plant oynayın
+spike düştü midde, biri alsın
+defuse basıyor olabilir ses geldi
+fake atıp b'ye dönelim
+ben lurk atıyorum siz yavaş oynayın
+çok hızlı pushluyorlar, trap kurun
+chamber op aldı dikkatli peekleyin
+tek tek çıkmayın beraber swing atalım
+ultim var, site açabilirim
+reyna çok agresif oynuyor, bekleyip cezalandıralım
+smoke yokken girmeyin biraz bekleyin
+adam low, tek mermi yeter
+80 vurdum jette, kaçtı
+kill peşine gitmeyin roundu oynayın
+spike zamanı var, acele defuse basmayın
+biri flank baksın arkadan geliyorlar
+a main tamamen boş gibi
+b long'da op var, kuru peek atmayın
+ben drone atıyorum arkasından girin
+skye kuş atsın sonra çıkalım
+duelist önden girerse tradeleyelim
+trade yok, herkes ayrı ayrı ölüyor
+güzel round sakin devam
+nt, az daha alıyorduk
+iyi denemeydi moral bozmayın
+adamlar hep aynı taktiği yapıyor
+bu round yavaş oynayalım pick bekleyelim
+spike'ı yalnız bırakmayın
+ben kısa tutuyorum, uzun boş kalmasın
+ses yapmayın, yürüyerek gidelim
+kapıdan biri çıkabilir dikkat
+molly atıyorum, plantı geciktirelim
+ult kasmam lazım orb alabilir miyim
+para atabilecek var mı vandal alıcam
+phantom aldım yakın oynayacağım
+skor önemli değil, iletişim kuralım yeter
+son round herkes ne varsa alsın
+
+# sitem-sosyal
+kanka kaç kere söyledik b bak diye
+niye tek başına çıkıyorsun anlamadım
+spike sende niye midde geziyorsun
+biraz takımla oynasan çok iyi olacak
+smoke istiyoruz ama smoke yok ortada
+duelist seçip arkada bekleme bari
+trade atmayacaksan neden yanımda duruyorsun
+herkes ayrı telden oynuyor şu an
+bu kadar ses yapmana gerek yoktu
+adam seni duydu zaten niye koşuyorsun
+plant yerine kill kovaladın round gitti
+defuse bas desek basmıyorsun, bekle desek basıyorsun
+ne yaptığını sen de bilmiyor gibisin
+lütfen aynı hatayı üçüncü kez yapma
+bak yine tek tek çıktık ve öldük
+takım oyunu diye bir şey var haberin olsun
+oraya bak dedik, arkanı döndün
+spike'ı niye yere attın şimdi
+bu roundu resmen hediye ettik
+adam gözünün önünden geçti nasıl görmedin
+abi biraz minimap bakar mısın
+her round aynı yerden ölmek zorunda mısın
+fake dedik sen site'a girdin
+rotate dedik hâlâ a'da bekliyorsun
+ekonomi yok dedik yine vandal aldın
+save diyoruz, sen düelloya giriyorsun
+bu oyun tek kişilik değil farkındasın değil mi
+flash atacaksan bari söyle de kör olmayalım
+kendi takımını daha çok flashlıyorsun
+smoke attın ama bize attın resmen
+o ultiyi biraz daha kötü kullanamazdın herhalde
+spike kurulmuş, sen hâlâ spawn geziyorsun
+flank geliyor dedik ama kimse bakmadı
+herkes konuşuyor ama kimse dinlemiyor
+boş yere ego peek attın round gitti
+adam low dedim, yine kaçırdın
+kardeşim niye panik yapıyorsun bu kadar
+sakin oynasak kazanacağız ama yok
+güzelim roundu kendi elimizle verdik
+senin yüzünden demiyorum ama baya etkiledin
+lütfen biraz daha dikkatli oyna
+her round aynı şeyi anlatmak yoruyor
+aim kötü olabilir ama oyun bilgisi de lazım
+duvarın arkasından adam bekliyordu, barizdi
+info vermeyince nasıl oynayalım
+mikrofon var ama sadece şikayet için kullanıyorsun
+oynayacaksan oyuna odaklan biraz
+toxiclik yapma, önce kendi oyununa bak
+tamam kötü rounddu ama bu kadar da dağılmayalım
+böyle oynarsak maç dönmez, biraz toparlanalım
+
+# ajan-ozel
+Jett dash hazır, smoke atıp içeri hızlı gireceğim
+Jett bıçak açtıysa yakın peek vermeyin
+Sage duvarı plant sonrası kur, defuse'u zorlaştıralım
+Sage heal varsa bana atabilir misin, tek canım kaldı
+Sage res atacaksa önce bölgeyi temizleyelim
+Sova recon at, site içinde kaç kişi var görelim
+Sova drone ile köşeleri temizle, arkasından girelim
+Sova shock dart plant alanına atsın, defuse'u bölelim
+Brimstone üç smoke'u aynı anda at, hızlı execute yapalım
+Brim molly plant üstüne at, zamanı yedirelim
+Brim ultiyi heaven'a at, oradan çıkamasınlar
+Omen smoke'u derin atma, bize alan bıraksın
+Omen paranoia atınca beraber çıkalım
+Omen tp ile arkaya geçti, flank bekleyin
+Viper wall açınca site'a girelim, toxin bitmeden plant atalım
+Viper molly ile spike üstünü kapat, defuse basamasınlar
+Viper ulti attı, içine tek tek girmeyin
+Cypher tripleri flank için kur, arkadan gelmesinler
+Cypher cam ile bilgi al, boş yere peek atmayalım
+Cypher cage açınca karşıya geçebiliriz
+Killjoy turret'i b main'e koy, erken info alsın
+Killjoy alarmbot patlayınca molly'i çalıştır
+Killjoy ultiyi kuruyorum, alanı tutun kırdırmayın
+Chamber tp'sini kurduysa agresif oynayabilir
+Chamber trap flank'e baksın, arkayı boş bırakmayalım
+Chamber op aldı, uzun açıdan kuru çıkmayın
+Raze boombot at, yakın köşede biri var mı görelim
+Raze nade'i dar alana at, adamları çıkmaya zorlayalım
+Raze satchel ile içeri uçacak, trade'e hazır olun
+Phoenix flash atarken söyle, kendi takımını kör etme
+Phoenix wall ile plant alanını kapat, güvenli kurulsun
+Phoenix ultiyle bilgi al, ölürsen sorun yok
+Reyna körü atınca hemen swing atalım
+Reyna dismiss kullanıp kaçtı, tekrar peek bekleyin
+Reyna heal alıyor, üstüne baskı kurun
+Skye kuş atsın, kör yiyen varsa hızlı girelim
+Skye köpek ile close köşeleri temizlesin
+Skye heal atabilir ama önce güvenli yere geçelim
+Breach stun'ı at, ben arkasından çıkacağım
+Breach flash duvardan gelsin, site savunmasını kıralım
+Breach ultiyle site'ı boşalt, plant için alan açalım
+KAY/O knife at, kimlerin orada olduğunu görelim
+KAY/O flash'ı yüksekten at, patlayınca çıkalım
+KAY/O ulti açtıysa yetenekleri kapandı, hızlı baskı yapalım
+Fade eye at, saklananları reveal edelim
+Fade prowler ile köşeyi temizle, sonra peekleyelim
+Fade ulti geldiyse adamların sesi kesilir, üstlerine gidelim
+Gekko flash'ı gönder, kör olduysa wingman plant atsın
+Gekko wingman defuse basarken koruyun, adamlar kırmaya gelecek
+Gekko molly'i spike üstüne at, defuse'u durduralım
+Harbor wall ile geçişi kapat, sight line'ları bölelim
+Harbor cascade gönder, arkasından güvenli geçelim
+Harbor ulti attıysa alanı boşaltırlar, hemen site'a yürüyelim
+Astra yıldızları önceden koy, girişte pull ve stun kullanalım
+Astra smoke'u erken kapatma, crossing yapmamız lazım
+Astra ultiyle sesi ve görüşü kes, plant sonrası oynayalım
+Neon stun atıp hızlı girecek, arkasından tradeleyin
+Neon duvarı açınca koridor gibi ilerleyelim
+Neon ulti açtı, yakın mesafede dikkat edin çok hızlı döner
+Yoru fake tp attı, adamlar rotasyon verebilir
+Yoru flash'ı sektirip at, direkt yüzümüze patlamasın
+Yoru ultiyle bilgi topla, arkaya çıkmadan haber ver
+Deadlock wall at, push'u tamamen yavaşlatalım
+Deadlock sound sensor koy, hızlı çıkanları yakalasın
+Deadlock ulti tuttuysa herkes cover versin, kaçırmayalım
+Iso shield aldı, teke tek düelloda dikkatli olun
+Iso wall atınca arkasından güvenli çıkabiliriz
+Iso ultiye aldıysa diğerleri site'ı boş bırakmasın
+Clove öldükten sonra smoke atabilir, post plant için bekleyin
+Clove decay at, canları düşsün sonra beraber çıkalım
+Clove ultiyle geri döndü, trade vermeden oynamaya çalış
+Vyse wall açtıysa geri dönemeyebiliriz, girişi iyi hesaplayın
+Vyse flash'ı patlamadan dönün, yoksa site çıkışı zorlaşır
+Vyse trap kurdu, dar alandan tek tek geçmeyin
+Waylay Saturate atarsa yavaşlarız, o alandan çıkmayın
+Waylay Lightspeed ile hızlı girecek, arkasını boş bırakmayın
+Waylay Refract kullandıysa tekrar eski pozisyona dönebilir
+Waylay ulti attı, alan kontrolünü kaybetmeden bekleyin
+Tejo drone gönder, bastıkları yeri reveal edelim
+Tejo strike atınca adamlar pozisyon değiştirecek, cross tutun
+Tejo yetenekle köşeyi boşalttıktan sonra site'a girelim
+Veto Chokehold kurduysa o geçişten koşarak geçmeyin
+Veto Interceptor varsa flash ve nade boşa gidebilir
+Veto alanı kapattı, önce utility'yi kırıp sonra girelim
+Miks Harmonize basarsa beraber hızlı tempo yapalım
+Miks M-pulse heal modundaysa geri çekilip can toplayalım
+Miks M-pulse concuss atarsa peşinden swing atalım
+Miks smoke/control attığında site'a gecikmeden yürüyelim
+Astra ve Omen smoke'ları çakışmasın, biri ana girişi biri heaven'ı kapatsın
+Sage yavaşını attıysa Raze nade ile aynı yere baskı kuralım
+Sova recon ile Fade eye aynı anda atılmasın, birini saklayalım
+Breach stun'dan sonra Neon hızlı girsin, çok iyi combo olur
+Viper wall açıkken Harbor duvarı boşa harcamayalım
+Killjoy ultiyle alan aldıktan sonra Cypher flank'i tutsun
+KAY/O suppress atınca Jett dash ile içeri girebilir
+Gekko wingman plant atarken Brim smoke'ları kapatmasın
+Phoenix flash atmadan önce söyle, yoksa takım kör oluyor
+Yoru fake ile rotasyon çektirsin, biz diğer site'a dönelim
+Deadlock sensörü sesle çalışıyor, yürüyerek geçmeye çalışın
+Veto ve KAY/O varken yeteneklere güvenmeyin, silah düellosuna hazır olun
+
+# kisa-komut
+a gelin
+b gelin
+mid gelin
+a boş
+b boş
+mid boş
+a dolu
+b dolu
+rotate
+dönelim
+fake at
+yavaş oynayın
+hızlı girelim
+rush b
+rush a
+sessiz gidin
+yürüyün
+ses yapma
+bekle
+çıkma
+peek atma
+beraber çıkalım
+tek tek çıkmayın
+tradele
+trade yok
+arkaya bak
+flank var
+flank geliyo
+shortta biri
+longda biri
+heaven var
+ct var
+site temiz
+site dolu
+spike sende
+spike bende
+spike düştü
+spike al
+plant at
+plant kur
+defuse bas
+yarı defuse
+full defuse
+fake defuse
+zamanı oynayın
+zaman var
+zaman yok
+save alın
+silahı kurtar
+eco yapalım
+force atalım
+full buy
+drop var mı
+vandal alıcam
+phantom ver
+op var
+op'a çıkma
+smoke at
+smoke bekle
+flash at
+flashlıyorum
+bakmayın
+kör oldum
+heal var mı
+heal at
+res at
+ulti var
+ulti aç
+ulti sakla
+drone at
+recon at
+wall at
+molly at
+nade at
+trap kur
+cam bak
+info ver
+ses aldım
+iki kişi
+üç kişi
+tek kaldı
+low hp
+çok low
+80 vurdum
+tek mermi
+yakında
+arkanda
+solda
+sağda
+köşede
+markette
+main'de
+linkte
+garage var
+elbow var
+defaultta
+kutu arkasında
+sakin oynayın
+panik yok
+nt
+wp
+güzel round
+iyi trade
+kötü peek
+boş öldük
+round bizde
+maçı döneriz
+moral bozma
+odaklanın
+son round
+hepsini alın
+ace var
+ace bırak
+clutch at
+oynama bırak
+temas verme
+çapraz tut
+cross kur
+çıkışı tut
+spike'a oyna
+
+# yazim-hatali
+b geliyolar
+a dan bastılar
+arkya bak flank var
+smok atsana
+flash atma kör oldk
+spike sende knk
+rotete dön dön
+adam ct de
+short ses aldım
+main dolu girme
+yavas oynayın
+tek tek cıkmayın
+trade atsana ya
+heal varmı
+sage can versene
+plant atıyom koru
+def basıyo olabilir
+adam cok low
+80 vurdm jette
+ultin varmı
+mid boş galiba
+b ye dönelim
+fake attık dönün
+koşma ses gidiyo
+spikeı niye attın
+adam arkda
+biri heaven bakın
+save al ölme
+eco yapcaz alma
+drop varmı vandal
+
+# karisik-tr-en
+b rushlayalım
+mid control alalım
+fake atıp rotate yapalım
+post plant oynayın
+trade verin
+entry ben giricem
+default oynayalım
+retake bekleyelim
+flank check lazım
+cross tutun
+off angle oynuyorum
+close oynama
+wide swing atmayın
+dry peek yapma
+smoke gelmeden çıkmayın
+utility harcamayın
+site execute yapalım
+slow push atalım
+contact oynayalım
+pick bekleyelim
+lurk atıyorum
+rotate fake olabilir
+main control bizde
+heaven smoke lazım
+ct smoke atsana
+default plant at
+retake için bekle
+entry frag lazım
+op angle tutuyor
+spike için play yapın
+
+# map-lokasyon
+ascent markette biri var
+ascent catten geliyorlar
+ascent a main dolu
+ascent b main boş
+ascent heaven kapatın
+bind hookah iki kişi
+bind long op var
+bind tp kullandılar
+bind lamps biri saklanıyor
+bind showerdan ses var
+haven garage dolu
+haven c long op tutuyor
+haven shorttan bastılar
+haven a heaven biri var
+haven c site temiz
+split ropes ses aldım
+split heaven'da biri var
+split mail boş
+split screens dikkat
+split b main dolu
+lotus rubble'da biri var
+lotus door açıldı
+lotus c mound ses var
+lotus a tree dikkat
+lotus b site boş gibi
+sunset markette biri var
+sunset elbow tuttular
+sunset boba'dan geliyor
+sunset mid control verdik
+sunset a main boş
+icebox yellow arkasında
+icebox kitchen biri var
+icebox tube'dan geçti
+icebox nest dikkat
+breeze halls var
+breeze elbow dolu
+fracture dish'ten geliyorlar
+fracture arcade dolu
+pearl art kontrol lazım
+pearl linkten gelebilir
+
+# ekonomi
+eco yapalım
+para yok alma
+full buy atalım
+force mu atıyoruz
+bu round force
+drop atabilecek var mı
+vandal drop lazım
+phantom alıcam drop var mı
+op alıyorum beni koruyun
+light shield al yeter
+full armor alın
+sheriff eco oynayalım
+save round bu
+silahları kurtarın
+ölmeyin para lazım
+bonus round oynuyoruz
+bonus bozmayın
+karşı eco olabilir
+adamlar force atmış
+silah düşürmeyin
+spike plant parası lazım
+ben alamıyorum param yetmiyor
+spectre alıp yakın oynarım
+marshal alıyorum mid tutarım
+para eşitleyelim herkes alsın
+
+# clutch
+sakin oyna
+ses yapma
+zamanı kullan
+spike'a oyna
+fake defuse bekle
+direkt çıkma
+adam low
+solunda olabilir
+sağdan gelebilir
+ct'den gelecek
+yarı basabilir
+full defuse'a bak
+molly varsa bekle
+smoke içinden çıkabilir
+acele etme zaman var
+zaman yok koş
+defuse sesi geldi
+tap attı fake olabilir
+yarıya kadar bastı
+ultin varsa kullan
+reload yapma çıkabilir
+silah değişme duyulur
+köşeyi temizle
+crosshair'i kafada tut
+alırsın bu roundu
+
+# post-plant
+plant attım koruyun
+default kurdum
+açık plant attım
+longdan oynayın
+main'den oynayın
+spike'a bakın yeter
+kill kovalamayın
+defuse'u bölelim
+molly spike üstüne
+smoke spike'a atma
+çapraz tutalım
+biri spike biri flank
+zaman bize çalışıyor
+peeke gerek yok
+temas verme
+geri çekil post plant
+spike görünür yerde
+ultiyle defuse böleriz
+ses gelirse haber ver
+defuse basarsa swing atalım
+
+# utility-istek
+smoke at
+ct smoke lazım
+heaven smoke at
+main smoke kapat
+flash at çıkalım
+flashlamadan söyle
+kör oldum bekle
+drone at köşe temizle
+recon at bilgi alalım
+wall at plant kurayım
+heal atabilir misin
+res at güvenliyse
+molly at geciktir
+nade at çıkmasınlar
+trap flank'e koy
+cam arkaya baksın
+turret baksın yeter
+ulti aç site alalım
+ulti sakla retake'e
+stun atınca çıkıyorum
+köpek at close'a
+prowler gönder
+knife at kim var görelim
+cage aç geçelim
+duvarı erken kırmayın
+
+# yanlis-oynama-toksik
+niye tek çıktın
+trade atsana kanka
+spike sende niye geziyorsun
+smoke istiyoruz smoke yok
+duelist seçip arkada bekleme
+niye rotate yapmadın
+save dedik niye çıktın
+eco dedik vandal aldın
+adam gözünün önünden geçti
+minimap bak biraz
+aynı yerden ölüyorsun her round
+fake dedik sen girdin
+ses yapma dedik koştun
+defuse bas dedik basmadın
+roundu hediye ettik
+kill kovalama round oyna
+info vermeden öldün
+takım oyunu oynayalım biraz
+kendi flashına kör olduk
+smoke bize atıldı resmen
+yine tek tek çıktık
+arkaya bakan yok mu
+herkes ayrı oynuyor
+aim kötü olabilir ama info ver
+biraz dikkatli oynayalım
+
+# tilt-moral
+tamam sakin
+hala alınır
+moral bozmayın
+boş ver devam
+nt güzel denemeydi
+wp iyi round
+toparlarız
+daha maç bitmedi
+panik yok
+herkes odaklansın
+kavga etmeyin oynayalım
+sadece info verelim
+susup oyuna dönelim
+iyi gidiyoruz devam
+kötü rounddu geçelim
+bu round önemli
+momentum bizde
+bir round alsak döner
+takımca oynarsak alırız
+tilt olmayın lütfen
+
+# mikrofon-comms
+mikrofon var mı
+info verin
+kimse konuşmuyor
+sadece info lütfen
+boş konuşmayın
+ses kasın
+ne gördün söyle
+kaç kişi var
+hangi taraftan geldi
+spike nerede
+öldüğün yeri söyle
+low olan kim
+adamın yerini ping at
+ping atabilir misin
+yazma konuş daha hızlı
+mic açabilir misin
+gereksiz bağırma
+comms temiz olsun
+clutchta susalım
+son kişiye info verin
+
+# afk-troll-report
+afk kaldı
+adam oynamıyor
+bilerek ölüyor gibi
+spike vermiyor
+trollüyor olabilir
+reportlayın maç sonu
+oyunu salmayın
+bilerek feedleme
+afk dön artık
+takım eksik oynuyoruz
+surrender vermeyelim
+ff basmayın daha erken
+ff atalım mı
+remake var mı
+adam base'de bekliyor
+spike'ı saklıyor
+yetenekleri bize atıyor
+chat kavgası yapmayın
+oyunu ciddiye alalım
+ranked bu normal değil
+
+# ajan-secim-rol
+smoke alır mısın
+healer lazım
+sentinel alabilir misin
+duelist çok oldu
+controller yok
+initiator lazım
+entry kim girecek
+jett girmen lazım
+reyna arkada kalma
+sage wall lazım
+brim smoke atar mısın
+omen tek smoke yetmez
+sova info atsın
+cypher flank tutsun
+killjoy site tutsun
+raze boombot atsın
+skye flash lazım
+breach stun at
+kayo knife at
+gekko wingman plant atsın
+
+# dusman-hasar-bilgi
+jett 80 yedi
+sage low
+reyna çok low
+omen 120 yedi
+chamber tek mermi
+raze yarım can
+viper arkada
+sova site içinde
+killjoy defaultta
+cypher ct'de
+phoenix ult attı
+jett dash yok
+sage heal kullandı
+omen tp attı
+reyna dismiss yok
+chamber tp kullandı
+raze nade attı
+brim ulti yok
+viper ulti var dikkat
+skye flashları bitti
+
+# retake-savunma
+retake oynayalım
+site vermeyin
+geri düşün retake
+bekleyin beraber girelim
+biri heaven biri ct
+smoke bitince çıkalım
+flash gelince giriyoruz
+spike'ı gördüm bekleyin
+defuse kit var mı
+yarıya basıp çık
+adamlar post plantta
+longdan oynuyorlar
+main'den çıkacaklar
+site içinde kalmayın
+crossfire kuralım
+dar alanda sıkışmayın
+retake için utility saklayın
+önce flank temizleyelim
+zaman az hızlı girin
+smoke içinden defuse bas
+
+# round-basi
+default başlayalım
+hızlı b deneyelim
+bu round a split
+mid alıp dönelim
+pick bekleyelim
+ilk kan vermeyin
+agresif çıkmayın
+pushlamayın bekleyin
+ben agresif peek atıcam
+biri trade'e gelsin
+b main tutuyorum
+a short bende
+mid bende
+garage bende
+flank ben bakarım
+site tek bırakmayın
+erken rotate yapmayın
+ses gelmeden dönmeyin
+utility harcatıp çıkalım
+spike geride kalmasın
+
+# kisa-komut-2
+bekle
+çık
+gir
+dön
+koş
+yürü
+bak
+kur
+bas
+bırak
+tut
+kaç
+saklan
+vur
+kır
+alma
+verme
+koru
+sustur
+oyna
+
+# karma-kisa
+b boş gibi ama dikkatli
+a fake olabilir dönmeyin hemen
+mid verdik haberiniz olsun
+ben arkayı tutuyorum siz girin
+spike bende ölürsem alın
+op midde sakın çıkma
+smoke gelmeden site'a girmeyin
+viper wall açınca yürüyün
+sage duvarı plant sonrası at
+sova recon bekleyin
+biri lurk atıyor olabilir
+flank çok hızlı geliyor
+adamlar hep aynı oynuyor
+bu round yavaş oynayalım
+ilk picki bekleyelim
+main kontrol almadan girmeyin
+bence a'ya dönelim
+b stack yemeyelim
+adamlar eco dikkat edin
+bonusu bozmadan oynayın
+
+# ayni-anlam-varyant
+b gelin
+b ye gelin
+b dönün
+b'ye rotate
+b boş gel
+b rushlayalım
+b hızlı
+b girelim
+b site alalım
+b deneyelim
+a gelin
+a dönelim
+a boş
+a rush
+a hızlı
+a split atalım
+a main gelin
+a'ya yürüyün
+a site temiz
+a plant atalım
+arkaya bak
+flank var
+flank geliyor
+arkadan geliyor
+biri arkada
+flank tut
+arka boş kalmasın
+biri arkayı tutsun
+arkayı salmayın
+lurk gelebilir
+sakin oyna
+acele etme
+zaman var
+bekle biraz
+ses yapma
+koşma duyulur
+çıkma bekle
+spike'a oyna
+defuse bekle
+fake olabilir
+
+# korunacak-kelime
+eco
+force
+full buy
+save
+drop
+rotate
+fake
+rush
+peek
+swing
+trade
+lurk
+flank
+clutch
+post plant
+retake
+default
+entry
+op
+smoke
+flash
+molly
+wall
+drone
+recon
+heaven
+short
+long
+main
+ct

@@ -93,6 +93,18 @@ Son ölçüm: genel **~9.5/10** çeviri kalitesi, ortalama **~1.3 sn** gecikme. 
 (`prompt.py`) düzenleyip benchmark'ı tekrar çalıştırarak kendi jargonunuza göre kaliteyi
 ölçebilirsiniz (`prompt.py` hem aracı hem benchmark'ı besler).
 
+### Büyük ölçekli toplu test
+
+`batch_translate.py`, `tests/phrases.txt` içindeki yüzlerce gerçek oyun-içi mesajı
+**eşzamanlı** çevirir (tekrarlar önbelleğe alınır), gecikme ölçer, sorunlu çıktıları
+(Türkçe sızıntısı / boş / aşırı uzun) otomatik işaretler ve tümünü `tests/results.md`'ye yazar:
+
+```bat
+.venv\Scripts\python.exe batch_translate.py
+```
+
+Son toplu ölçüm: **790 satır / 770 benzersiz çağrı, ort. ~1.2 sn gecikme, 0 otomatik işaret.**
+
 ---
 
 ## Sorun giderme
