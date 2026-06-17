@@ -1,0 +1,19 @@
+# Gizli / yerel yapilandirma (API anahtari ASLA commit edilmez)
+config.ini
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# PyInstaller cikti
+build/
+dist/
+*.spec
+
+# Isletim sistemi
+.DS_Store
+Thumbs.db
