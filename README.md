@@ -80,6 +80,21 @@ eşlenir (örn. *“iki kişi A geliyor”* → **“2 pushing A”**, *“spike
 
 ---
 
+## Benchmark (çeviri kalitesi testi)
+
+`benchmark.py`, aracın **gerçek prompt'uyla** 9 kategoride 24 gerçekçi Valorant mesajını
+çevirir, gecikme ölçer ve sonuçları `benchmark_results.md`'ye yazar:
+
+```bat
+.venv\Scripts\python.exe benchmark.py
+```
+
+Son ölçüm: genel **~9.5/10** çeviri kalitesi, ortalama **~1.3 sn** gecikme. Prompt'u
+(`prompt.py`) düzenleyip benchmark'ı tekrar çalıştırarak kendi jargonunuza göre kaliteyi
+ölçebilirsiniz (`prompt.py` hem aracı hem benchmark'ı besler).
+
+---
+
 ## Sorun giderme
 
 | Sorun | Çözüm |
