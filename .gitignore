@@ -2,6 +2,11 @@
 config.ini
 .env
 
+# Yerel calisma dosyalari (chat gecmisi icerebilir -> commit edilmez)
+translator.log
+startup_install.log
+install_startup_task.ps1
+
 # Python
 __pycache__/
 *.py[cod]
