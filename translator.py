@@ -69,7 +69,16 @@ from prompt import build_system_prompt as _shared_build_prompt
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CONFIG_PATH = os.path.join(HERE, "config.ini")
+LOG_PATH = os.path.join(HERE, "translator.log")
 SENTINEL = "\x00__VALO_TR_SENTINEL__\x00"
+
+
+def _log(msg):
+    try:
+        with open(LOG_PATH, "a", encoding="utf-8") as f:
+            f.write(time.strftime("%H:%M:%S") + "  " + str(msg) + "\n")
+    except Exception:
+        pass
 
 
 # --- Yardimcilar -------------------------------------------------------------
@@ -212,6 +221,17 @@ def beep_err(cfg):
             pass
 
 
+def beep_ready(cfg):
+    # Acilista "hazirim" bildirimi: iki yukselen ton. Boylece arka planda
+    # calistigini (pencere olmadan) duyarak anlarsiniz.
+    if cfg["play_sound"] and _HAS_SOUND:
+        try:
+            winsound.Beep(660, 120)
+            winsound.Beep(990, 160)
+        except Exception:
+            pass
+
+
 def _restore(original, cfg):
     if cfg["restore_clipboard"] and original is not None and original != SENTINEL:
         try:
@@ -225,7 +245,9 @@ _busy = threading.Lock()
 
 
 def do_translate(cfg):
+    _log("hotkey fired")
     if not _busy.acquire(blocking=False):
+        _log("busy, skipped")
         return  # zaten bir ceviri suruyor
     try:
         try:
@@ -234,6 +256,7 @@ def do_translate(cfg):
             original = None
 
         src = grab_selection(cfg)
+        _log("grabbed: " + repr(src))
         if not src or not src.strip():
             print("[!] Pano bos - cevrilecek metin yok. (Chat'e yazdiniz mi?)")
             beep_err(cfg)
@@ -258,6 +281,7 @@ def do_translate(cfg):
 
         ms = int((time.time() - t0) * 1000)
         print("[EN] " + out + "  ({} ms)".format(ms))
+        _log("translated: " + repr(out) + " ({} ms)".format(ms))
         paste_text(out, cfg)
         beep_ok(cfg)
 
@@ -270,6 +294,7 @@ def do_translate(cfg):
 
 def main():
     cfg = load_config()
+    _log("=== started, waiting for hotkey: " + cfg["hotkey"] + " ===")
     print("=" * 58)
     print("  VALORANT Chat Translator  ({} -> {})".format(cfg["source"], cfg["target"]))
     print("=" * 58)
@@ -290,7 +315,10 @@ def main():
             lambda: threading.Thread(target=do_translate, args=(cfg,), daemon=True).start(),
             suppress=cfg["suppress"],
         )
+        _log("hotkey registered OK (suppress=%s)" % cfg["suppress"])
+        beep_ready(cfg)
     except Exception as e:
+        _log("HOTKEY REGISTER FAILED: " + str(e))
         _die("[HATA] Kisayol kaydedilemedi: {}\n"
              "Yonetici olarak calistirmayi deneyin.".format(e))
 
