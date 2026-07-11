@@ -22,7 +22,9 @@ Kullanim:
 import os
 import sys
 import time
+import ctypes
 import threading
+import subprocess
 import configparser
 
 # UTF-8 konsol (Windows cp1252 karakter sorunlarini onler)
@@ -242,9 +244,12 @@ def _restore(original, cfg):
 
 # --- Ana islem ---------------------------------------------------------------
 _busy = threading.Lock()
+_last_fire = 0.0  # son "hotkey fired" ani (bekci bununla hook'un canli olup olmadigini anlar)
 
 
 def do_translate(cfg):
+    global _last_fire
+    _last_fire = time.time()
     _log("hotkey fired")
     if not _busy.acquire(blocking=False):
         _log("busy, skipped")
@@ -292,6 +297,57 @@ def do_translate(cfg):
         _busy.release()
 
 
+# --- Hook bekcisi (self-heal) --------------------------------------------------
+# Oyun tam yuk altindayken Windows (LowLevelHooksTimeout) ve/veya Vanguard,
+# dusuk seviyeli klavye hook'unu sessizce dusurebiliyor: surec ayakta kalir ama
+# F8 sagirlasir. Bekci, kisayolu hook'tan bagimsiz olarak GetAsyncKeyState ile
+# izler (bu bir sorgudur, hook degildir; sokulemez). Hook bir basisi kacirirsa
+# ceviriyi yine de tetikler ve hook'u tazelemek icin sureci kendini yeniden
+# baslatir. Sonuc: hook olse bile F8 calismaya devam eder.
+_VK = {"f1": 0x70, "f2": 0x71, "f3": 0x72, "f4": 0x73, "f5": 0x74, "f6": 0x75,
+       "f7": 0x76, "f8": 0x77, "f9": 0x78, "f10": 0x79, "f11": 0x7A, "f12": 0x7B}
+
+
+def _self_restart():
+    _log("self-restart: hook sagirlasti, surec tazeleniyor")
+    try:
+        env = dict(os.environ)
+        env["VALO_TR_RESPAWN"] = "1"  # yeniden dogan kopya "hazirim" bip'ini calmasin
+        subprocess.Popen([sys.executable, os.path.abspath(__file__)], cwd=HERE, env=env)
+    except Exception as e:
+        _log("self-restart BASARISIZ: %s" % e)
+        return
+    os._exit(0)
+
+
+def _watchdog(cfg):
+    vk = _VK.get(cfg["hotkey"])
+    if vk is None:
+        _log("watchdog: %r icin VK karsiligi yok, bekci devre disi" % cfg["hotkey"])
+        return
+    user32 = ctypes.windll.user32
+    was_down = False
+    while True:
+        time.sleep(0.03)
+        try:
+            down = bool(user32.GetAsyncKeyState(vk) & 0x8000)
+        except Exception:
+            continue
+        if down and not was_down:
+            press_ts = time.time()
+            time.sleep(0.35)  # hook'a ates etme firsati taniyalim
+            if _last_fire < press_ts:
+                # Hook bu basisi gormedi -> sagir. Ceviriyi biz tetikleyelim,
+                # bitince de hook'u tazelemek icin yeniden baslayalim.
+                _log("watchdog: hook %s'i kacirdi -> yedek tetik + tazeleme" % cfg["hotkey"])
+                t = threading.Thread(target=do_translate, args=(cfg,), daemon=True)
+                t.start()
+                t.join(timeout=30)
+                time.sleep(0.5)
+                _self_restart()
+        was_down = down
+
+
 def main():
     cfg = load_config()
     _log("=== started, waiting for hotkey: " + cfg["hotkey"] + " ===")
@@ -316,11 +372,15 @@ def main():
             suppress=cfg["suppress"],
         )
         _log("hotkey registered OK (suppress=%s)" % cfg["suppress"])
-        beep_ready(cfg)
+        if not os.environ.get("VALO_TR_RESPAWN"):
+            beep_ready(cfg)
     except Exception as e:
         _log("HOTKEY REGISTER FAILED: " + str(e))
         _die("[HATA] Kisayol kaydedilemedi: {}\n"
              "Yonetici olarak calistirmayi deneyin.".format(e))
+
+    threading.Thread(target=_watchdog, args=(cfg,), daemon=True).start()
+    _log("watchdog armed (GetAsyncKeyState yedegi aktif)")
 
     try:
         keyboard.wait()
