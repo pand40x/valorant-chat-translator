@@ -154,6 +154,8 @@ def translate(text, cfg):
         "temperature": cfg["temperature"],
         "max_tokens": 512,
         "stream": False,
+        # Oyun sohbeti icin uzun dusunme yerine hizli, dogrudan ceviri.
+        "thinking": {"type": "disabled"},
     }
     last_err = None
     for _ in range(2):  # kisa bir tekrar denemesi (ag dalgalanmalari icin)
@@ -274,6 +276,7 @@ def do_translate(cfg):
         try:
             out = translate(src, cfg)
         except Exception as e:
+            _log("translation error: " + repr(e))
             print("[X] Ceviri hatasi: " + str(e))
             beep_err(cfg)
             _restore(original, cfg)
