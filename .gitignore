@@ -22,3 +22,6 @@ dist/
 # Isletim sistemi
 .DS_Store
 Thumbs.db
+
+# Yerel baslatici (makineye ozel mutlak yollar icerir)
+start_hidden.vbs

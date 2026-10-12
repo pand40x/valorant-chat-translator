@@ -1,12 +1,18 @@
 # Valorant Chat Translator (TR → EN)
 
 Oyun içi sohbete yazdığınız **Türkçe** metni tek tuşla (varsayılan **F8**) seçip kopyalar,
-DeepSeek ile **rekabetçi Valorant terminolojisine** uygun şekilde İngilizceye çevirir ve
+bir LLM ile **rekabetçi Valorant terminolojisine** uygun şekilde İngilizceye çevirir ve
 geri yapıştırır. Enter'a siz basarsınız.
 
 ```
-Chat'e yaz  ─►  F8  ─►  [seç + kopyala]  ─►  DeepSeek çeviri  ─►  [İngilizcesi yapışır]  ─►  Enter
+Chat'e yaz  ─►  F8  ─►  [seç + kopyala]  ─►  çeviri  ─►  [İngilizcesi yapışır]  ─►  Enter
+                                             │
+                        yerel sözlük (0 ms) ─┤ sık kalıplar API'ye hiç gitmez
+                        önbellek     (0 ms) ─┤ aynı cümlenin tekrarı
+                        API       (~1–2 sn) ─┘ geri kalan her şey
 ```
+
+Sağlayıcı bağımsızdır: OpenAI uyumlu her endpoint çalışır (Xiaomi MiMo, DeepSeek, ...).
 
 ---
 
@@ -34,12 +40,17 @@ Kabul etmiyorsanız bu aracı kullanmayın.
    Kurulumda **“Add python.exe to PATH”** kutusunu işaretleyin.
 2. Bu klasörü Windows PC'ye indirin (repo'yu klonlayın veya ZIP indirin).
 3. **`setup.bat`** dosyasına çift tıklayın. (Sanal ortam kurar, paketleri yükler, `config.ini` oluşturur.)
-4. **`config.ini`** dosyasını açın ve DeepSeek API anahtarınızı yazın:
+4. **`config.ini`** dosyasını açın ve API anahtarınızı yazın:
    ```ini
    [api]
    key = sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
    ```
-5. **`run.bat`** dosyasına çift tıklayın. (Yönetici izni ister — **Evet** deyin; oyuna giriş gönderebilmek için gerekli.)
+   (Sağlayıcı seçimi için aşağıdaki **Sağlayıcı seçimi** tablosuna bakın.)
+5. **Kurulumu doğrulayın** — oyuna girmeden anahtar/model/endpoint testi:
+   ```bat
+   .venv\Scripts\python.exe check_api.py
+   ```
+6. **`run.bat`** dosyasına çift tıklayın. (Yönetici izni ister — **Evet** deyin; oyuna giriş gönderebilmek için gerekli.)
 
 > İsterseniz tek dosyalık `.exe` için `build.bat` çalıştırın → `dist\ValorantTranslator.exe`.
 > (config.ini'yi exe ile aynı klasöre koyun.)
@@ -61,15 +72,37 @@ Başarıda tiz, hatada pes bir bip sesi duyarsınız. Konsolda `[TR]` ve `[EN]` 
 
 | Ayar | Açıklama | Varsayılan |
 |---|---|---|
-| `api.key` | DeepSeek API anahtarı | — |
-| `api.model` | Model | `deepseek-chat` |
+| `api.key` | API anahtarı | — |
+| `api.base_url` | Sağlayıcı endpoint'i (OpenAI uyumlu her sağlayıcı) | `https://api.xiaomimimo.com/v1` |
+| `api.model` | Model | `mimo-v2-flash` |
 | `api.temperature` | Düşük = daha tutarlı/sabit çıktı (bkz. sıcaklık kıyası) | `0.3` |
+| `api.max_tokens` | Yanıt sınırı; dar tutmak modelin gevezelemesini engeller | `256` |
 | `translation.source_lang` / `target_lang` | Çeviri yönü | `Turkish` → `English` |
-| `hotkey.translate` | Kısayol (`f8`, `f9`, `ctrl+space`...) | `f8` |
+| `hotkey.translate` | Kısayol (`f8`, `f9`, `ctrl+space`, `alt+x`...) | `f8` |
 | `hotkey.suppress` | Tuşu oyuna iletme | `true` |
 | `behavior.auto_send` | Çeviri sonrası otomatik Enter | `false` |
 | `behavior.restore_clipboard` | İşlem sonrası eski panoyu geri yükle | `true` |
 | `behavior.play_sound` | Sesli geri bildirim | `true` |
+| `behavior.use_local_dict` | Sık kalıpları API'siz, anlık çevir (`callouts.py`) | `true` |
+| `behavior.cache` | Aynı cümlenin tekrarını önbellekten ver | `true` |
+
+### Sağlayıcı seçimi
+
+OpenAI uyumlu her sağlayıcı çalışır — `base_url` + `model` değiştirmek yeterli:
+
+| Sağlayıcı | `base_url` | Önerilen `model` |
+|---|---|---|
+| Xiaomi MiMo | `https://api.xiaomimimo.com/v1` | `mimo-v2-flash` (hızlı/ucuz), `mimo-v2-pro` |
+| DeepSeek | `https://api.deepseek.com` | `deepseek-chat` |
+
+Anahtar/endpoint/model üçlüsünün gerçekten çalıştığını **oyuna girmeden** doğrulamak için:
+
+```bat
+.venv\Scripts\python.exe check_api.py
+```
+
+Bu araç anahtarı doğrular, sağlayıcıdaki **kullanılabilir modelleri listeler**, gerçek
+prompt'la tek cümle çevirip gecikmeyi ölçer ve yerel sözlüğü sınar.
 
 ### Çeviri kalitesi nasıl sağlanıyor?
 
@@ -77,6 +110,26 @@ Başarıda tiz, hatada pes bir bip sesi duyarsınız. Konsolda `[TR]` ve `[EN]` 
 ajan/harita/silah isimleri korunur, Türkçe oyun argosu → İngilizce callout sözlüğüyle
 eşlenir (örn. *“iki kişi A geliyor”* → **“2 pushing A”**, *“spike ektim”* → **“planted”**),
 çıktı kısa ve net tutulur. Promptu kendi takım jargonunuza göre düzenleyebilirsiniz.
+
+### Gecikme nasıl düşürülüyor?
+
+Oyun içinde 2 saniye uzun bir süre. Üç katmanlı bir yol izlenir — en hızlısı önce:
+
+| Katman | Gecikme | Ne zaman devreye girer |
+|---|---|---|
+| **Yerel sözlük** (`callouts.py`) | **0 ms** | Sık kalıplar: `rotasyon`, `spike ektim`, `tek kaldi`, `bana silah at`... (226 kalıp) |
+| **Önbellek** | **0 ms** | Aynı cümleyi ikinci kez çevirirken (comms çok tekrar eder) |
+| **API** | ~1–2 sn | Geri kalan her şey — serbest cümleler |
+
+Ayrıca her çeviride yeni TCP+TLS el sıkışması yapılmaz: tek bir `requests.Session`
+bağlantıyı canlı tutar ve açılışta bir kez ısıtılır. Bu tek başına çağrı başına
+**~200–400 ms** kazandırır, ilk F8 dahil.
+
+Yerel sözlük **tutucu** tutulur: yalnızca tek anlamlı, yüksek güvenli kalıplar
+girer. Tam eşleşme yoksa API'ye düşülür — yanlış bir anlık cevap, yavaş ama doğru
+bir cevaptan kötüdür. Kendi takım jargonunuzu `callouts.py` içindeki tabloya
+ekleyebilirsiniz (anahtarlar `normalize()` geçmiş halde: küçük harf, Türkçe
+harfler ASCII'ye katlanmış, noktalama atılmış).
 
 ---
 
@@ -124,9 +177,11 @@ Karmaşık taktiksel cümlelerde (oyala / zaman kazan / bait / default okuma) ka
 | Tam ekranda çalışmıyor | Oyunu **Kenarlıksız Pencere (Borderless)** moduna alın. |
 | “Pano boş” uyarısı | Önce sohbete metin yazın; F8'e sohbet kutusu **odaktayken** basın. |
 | F8 oyunda başka şey yapıyor | `config.ini`'de `suppress = true` olsun veya başka kısayol seçin. |
-| 401 hatası | API anahtarı yanlış → `config.ini`'yi kontrol edin. |
-| 402 hatası | DeepSeek bakiyeniz bitmiş. |
-| Çeviri yavaş | Normal; ağ + API gecikmesi 1–3 sn olabilir. |
+| 401 hatası | API anahtarı yanlış, ya da anahtar `base_url` ile uyuşmuyor → `check_api.py` çalıştırın. |
+| 402 hatası | Sağlayıcıdaki bakiyeniz bitmiş. |
+| 404 hatası | `base_url` veya `model` adı yanlış → `check_api.py` kullanılabilir modelleri listeler. |
+| 429 hatası | Hız sınırı; birkaç saniye bekleyin. |
+| Çeviri yavaş | Ağ + API gecikmesi 1–3 sn olabilir. Daha hızlı bir model deneyin (`mimo-v2-flash`), ya da sık kullandığınız kalıpları `callouts.py`'ye ekleyin (0 ms). |
 
 ---
 
@@ -134,7 +189,9 @@ Karmaşık taktiksel cümlelerde (oyala / zaman kazan / bait / default okuma) ka
 
 - **API anahtarınızı asla paylaşmayın / commit etmeyin.** `config.ini` `.gitignore` ile hariç tutulur;
   repoda yalnızca `config.example.ini` (yer tutucu) bulunur.
-- Anahtarınız bir yerde açığa çıktıysa <https://platform.deepseek.com/api_keys> üzerinden **yenileyin**.
+- Anahtarınız bir yerde açığa çıktıysa (sohbete yapıştırmak, ekran paylaşımı, log) **hemen yenileyin**:
+  MiMo → <https://platform.xiaomimimo.com> · DeepSeek → <https://platform.deepseek.com/api_keys>
+- `check_api.py` anahtarı ekrana yazmaz, yalnızca maskeler (`sk-abc...1234`).
 
 ## Lisans
 
