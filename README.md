@@ -74,7 +74,7 @@ Başarıda tiz, hatada pes bir bip sesi duyarsınız. Konsolda `[TR]` ve `[EN]` 
 |---|---|---|
 | `api.key` | API anahtarı | — |
 | `api.base_url` | Sağlayıcı endpoint'i (OpenAI uyumlu her sağlayıcı) | `https://api.xiaomimimo.com/v1` |
-| `api.model` | Model | `mimo-v2-flash` |
+| `api.model` | Model | `mimo-v2.6-flash` |
 | `api.temperature` | Düşük = daha tutarlı/sabit çıktı (bkz. sıcaklık kıyası) | `0.3` |
 | `api.max_tokens` | Yanıt sınırı; dar tutmak modelin gevezelemesini engeller | `256` |
 | `translation.source_lang` / `target_lang` | Çeviri yönü | `Turkish` → `English` |
@@ -90,10 +90,14 @@ Başarıda tiz, hatada pes bir bip sesi duyarsınız. Konsolda `[TR]` ve `[EN]` 
 
 OpenAI uyumlu her sağlayıcı çalışır — `base_url` + `model` değiştirmek yeterli:
 
-| Sağlayıcı | `base_url` | Önerilen `model` |
+| Sağlayıcı | `base_url` | `model` |
 |---|---|---|
-| Xiaomi MiMo | `https://api.xiaomimimo.com/v1` | `mimo-v2-flash` (hızlı/ucuz), `mimo-v2-pro` |
-| DeepSeek | `https://api.deepseek.com` | `deepseek-chat` |
+| DeepSeek | `https://api.deepseek.com` | `deepseek-chat` — **oyun içi için en hızlı**, bkz. ölçüm |
+| Xiaomi MiMo | `https://api.xiaomimimo.com/v1` | `mimo-v2.6-pro` (MiMo'nun en hızlısı), `mimo-v2.6-flash` |
+
+> MiMo'nun model adları noktalıdır (`mimo-v2.6-flash`, `mimo-v2-flash` **değil**).
+> Geçerli listeyi `check_api.py` yazdırır; `mimo-v2.5-*` modelleri kullanımdan
+> kaldırılıyor.
 
 Anahtar/endpoint/model üçlüsünün gerçekten çalıştığını **oyuna girmeden** doğrulamak için:
 
@@ -115,21 +119,49 @@ eşlenir (örn. *“iki kişi A geliyor”* → **“2 pushing A”**, *“spike
 
 Oyun içinde 2 saniye uzun bir süre. Üç katmanlı bir yol izlenir — en hızlısı önce:
 
-| Katman | Gecikme | Ne zaman devreye girer |
+| Katman | Gecikme | Kapsam (`tests/` korpusunda ölçülmüş, 837 gerçek mesaj) |
 |---|---|---|
-| **Yerel sözlük** (`callouts.py`) | **0 ms** | Sık kalıplar: `rotasyon`, `spike ektim`, `tek kaldi`, `bana silah at`... (226 kalıp) |
-| **Önbellek** | **0 ms** | Aynı cümleyi ikinci kez çevirirken (comms çok tekrar eder) |
-| **API** | ~1–2 sn | Geri kalan her şey — serbest cümleler |
+| **Yerel sözlük** (`callouts.py`) | **0 ms** | **%18,5** — 341 kalıp |
+| **Önbellek** | **0 ms** | Aynı cümlenin tekrarı (comms çok tekrar eder) |
+| **API** | sağlayıcıya göre | Geri kalan ~%80 — serbest cümleler |
+
+Sözlük kapsamı kategoriye göre çok değişir, çünkü kalıplar **gerçek korpustan**
+çıkarıldı (oyuncuların varsaydığım değil, gerçekten yazdığı biçimler — `smoke at`,
+`a gelin`, `ulti var`):
+
+| Kategori | Kapsam |
+|---|---|
+| `korunacak-kelime` (`op`, `eco`, `full buy`, `drop`...) | %100 |
+| `kisa-komut` (`a boş`, `defuse bas`, `heal at`...) | %81 |
+| `kisa-komut-2` (tek kelimelik emirler) | %60 |
+| Uzun taktik cümleler | %0 — API'ye gider, doğrusu da bu |
 
 Ayrıca her çeviride yeni TCP+TLS el sıkışması yapılmaz: tek bir `requests.Session`
-bağlantıyı canlı tutar ve açılışta bir kez ısıtılır. Bu tek başına çağrı başına
-**~200–400 ms** kazandırır, ilk F8 dahil.
+bağlantıyı canlı tutar ve açılışta bir kez ısıtılır (çağrı başına ~200–400 ms).
 
-Yerel sözlük **tutucu** tutulur: yalnızca tek anlamlı, yüksek güvenli kalıplar
-girer. Tam eşleşme yoksa API'ye düşülür — yanlış bir anlık cevap, yavaş ama doğru
-bir cevaptan kötüdür. Kendi takım jargonunuzu `callouts.py` içindeki tabloya
-ekleyebilirsiniz (anahtarlar `normalize()` geçmiş halde: küçük harf, Türkçe
-harfler ASCII'ye katlanmış, noktalama atılmış).
+Yerel sözlük **tutucu** tutulur: yalnızca tek anlamlı kalıplar girer. Tek başına
+çok anlamlı tek kelimeler (`çık`, `kur`, `vur`, `bırak`) bilerek dışarıda —
+yanlış bir anlık cevap, yavaş ama doğru bir cevaptan kötüdür. Kendi jargonunuzu
+tabloya ekleyebilirsiniz (anahtarlar `normalize()` geçmiş halde: küçük harf,
+Türkçe harfler ASCII'ye katlanmış, noktalama atılmış).
+
+### Sağlayıcı gecikmesi (ölçülmüş)
+
+Oyun içi kullanılabilirliği **medyan değil, kuyruk** belirler: 2 sn medyan iyi
+görünür ama her 10 çağrıdan biri 10 sn sürerse araç işe yaramaz. Aşağıdaki
+ölçüm **sıralı** isteklerle yapıldı (oyunda tek seferde tek istek olur):
+
+| Model | medyan | p90 | en kötü |
+|---|---|---|---|
+| `deepseek-chat` (bkz. `benchmark_results.md`) | **1282 ms** | — | **1516 ms** |
+| `mimo-v2.6-pro` | 3781 ms | — | 11629 ms |
+| `mimo-v2.6-flash` | 5109 ms | 9724 ms | 14097 ms |
+| `mimo-v2.6-pro-ultraspeed` | 8159 ms | — | 27831 ms |
+
+DeepSeek yalnızca ~3x daha hızlı değil, **öngörülebilir**: en kötüsü 1,5 sn.
+MiMo modellerinin kuyruğu 11–28 sn'ye çıkıyor, ki oyun ortasında kullanılamaz.
+Çeviri kalitesi üç MiMo modelinde de birbirine yakın, yani `pro-ultraspeed`'in
+adı yanıltıcı — ölçümde en yavaşı o.
 
 ---
 
@@ -181,7 +213,7 @@ Karmaşık taktiksel cümlelerde (oyala / zaman kazan / bait / default okuma) ka
 | 402 hatası | Sağlayıcıdaki bakiyeniz bitmiş. |
 | 404 hatası | `base_url` veya `model` adı yanlış → `check_api.py` kullanılabilir modelleri listeler. |
 | 429 hatası | Hız sınırı; birkaç saniye bekleyin. |
-| Çeviri yavaş | Ağ + API gecikmesi 1–3 sn olabilir. Daha hızlı bir model deneyin (`mimo-v2-flash`), ya da sık kullandığınız kalıpları `callouts.py`'ye ekleyin (0 ms). |
+| Çeviri yavaş | Sağlayıcıya bağlı — bkz. **Sağlayıcı gecikmesi (ölçülmüş)**. MiMo'da kuyruk 11–28 sn'ye çıkabiliyor; en hızlı seçenek `deepseek-chat`. Sık kullandığınız kalıpları `callouts.py`'ye eklemek o satırları tamamen API'den çıkarır (0 ms). |
 
 ---
 

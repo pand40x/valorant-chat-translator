@@ -245,6 +245,139 @@ _TABLE = {
     "compu bozmayin": "dont grief the comp",
 }
 
+# --- Korpustan gelen kaliplar -----------------------------------------------
+# Yukaridaki tablo elle yazilmisti ve gercek kullanimi iyi temsil etmiyordu:
+# tests/phrases.txt uzerinde olculen kapsam yalnizca %5 cikti. Asagidaki
+# kaliplar dogrudan o korpustan (gercek oyun-ici mesajlar) cikarildi -- yani
+# oyuncularin GERCEKTEN yazdigi bicimler. Ornegin "duman at" degil "smoke at",
+# "gidelim" degil "a gelin".
+#
+# Hala tutucu: tek basina cok anlamli olan tek kelimeler (cik, kur, vur, birak,
+# alma, verme, sustur, kir) BILEREK dışarida birakildi -- onlar API'ye gider.
+_TABLE_CORPUS = {
+    # --- Site cagrisi / durum ---
+    "a gelin": "come a",
+    "b gelin": "come b",
+    "c gelin": "come c",
+    "mid gelin": "come mid",
+    "a bos": "a is clear",
+    "b bos": "b is clear",
+    "c bos": "c is clear",
+    "mid bos": "mid is clear",
+    "a dolu": "a is stacked",
+    "b dolu": "b is stacked",
+    "c dolu": "c is stacked",
+    "site temiz": "site clear",
+    "site dolu": "site is stacked",
+    "rush a": "rush a",
+    "rush b": "rush b",
+    "rush c": "rush c",
+    "donelim": "lets rotate",
+    "main kontrol": "control main",
+
+    # --- Hareket / tempo ---
+    "yuruyun": "walk",
+    "cikma": "dont peek",
+    "peek atma": "dont peek",
+    "bakmayin": "dont look",
+    "sessiz gidin": "go quiet",
+    "ses yapma": "dont make noise",
+    "yavas oynayin": "play slow",
+    "hizli girelim": "lets go fast",
+    "beraber cikalim": "lets swing together",
+    "tek tek cikmayin": "dont go one by one",
+    "odaklanin": "focus up",
+    "gir": "go in",
+    "kos": "run",
+    "yuru": "walk",
+    "saklan": "hide",
+    "kac": "run",
+    "koru": "hold",
+    "oyna": "play",
+    "bak": "check",
+
+    # --- Util (oyuncular Ingilizce terimi Turkce fiille kullaniyor) ---
+    "smoke at": "smoke it",
+    "smoke bekle": "wait for smoke",
+    "flash at": "flash",
+    "molly at": "molly it",
+    "nade at": "nade it",
+    "heal at": "heal me",
+    "res at": "res me",
+    "trap kur": "set a trap",
+    "fake at": "fake it",
+    "flashliyorum": "im flashing",
+    "ulti var": "i have ult",
+    "ulti ac": "use your ult",
+    "ulti sakla": "save your ult",
+    "cam bak": "check window",
+    "info ver": "give info",
+
+    # --- Spike ---
+    "spike dustu": "spike dropped",
+    "spike al": "pick up the spike",
+    "spike sende": "you have the spike",
+    "plant at": "plant it",
+    "plant kur": "plant it",
+    "defuse bas": "defuse it",
+    "yari defuse": "half defuse",
+    "full defuse": "full defuse",
+    "fake defuse": "fake defuse",
+
+    # --- Ekonomi ---
+    "save alin": "save",
+    "eco yapalim": "lets eco",
+    "silahi kurtar": "save your gun",
+    "vandal alicam": "ill buy vandal",
+    "phantom ver": "drop me a phantom",
+    "drop var mi": "anyone have a drop",
+    "heal var mi": "anyone have heal",
+
+    # --- Dusman bilgisi ---
+    "iki kisi": "2 of them",
+    "uc kisi": "3 of them",
+    "dort kisi": "4 of them",
+    "low hp": "low hp",
+    "cok low": "really low",
+    "80 vurdum": "hit him for 80",
+    "kir oldum": "im broken",
+    "ses aldim": "heard something",
+    "tradele": "trade him",
+    "trade yok": "no trade",
+    "arkaya bak": "watch behind",
+    "arkanda": "behind you",
+    "yakinda": "close by",
+    "flank geliyo": "flank incoming",
+    "op var": "they have op",
+    "op a cikma": "dont peek the op",
+
+    # --- Lokasyon ---
+    "solda": "left",
+    "sagda": "right",
+    "kosede": "in the corner",
+    "markette": "market",
+    "main de": "main",
+    "linkte": "link",
+    "defaultta": "default",
+    "shortta biri": "one short",
+    "longda biri": "one long",
+    "heaven var": "one heaven",
+    "ct var": "one ct",
+    "garage var": "one garage",
+    "elbow var": "one elbow",
+
+    # --- Zaman ---
+    "zamani oynayin": "play the clock",
+    "zaman var": "we have time",
+    "zaman yok": "no time",
+
+    # --- Sosyal ---
+    "nt": "nt",
+    "wp": "wp",
+}
+_TABLE.update(_TABLE_CORPUS)
+
+
 # Zaten standart Ingilizce oyun terimi olan tek kelimeler: oldugu gibi doner.
 # (prompt.py ayni kurali modele de soyluyor; burada API'ye hic gitmeden hallediyoruz.)
 _PASSTHROUGH = {
@@ -253,6 +386,9 @@ _PASSTHROUGH = {
     "molly", "heaven", "hell", "short", "long", "main", "ct", "mid", "spawn",
     "plant", "spike", "defuse", "rotate", "push", "hold", "trade", "util",
     "ult", "gg", "ff", "a", "b", "c", "one", "two", "three", "low", "down",
+    # korpustan: korunacak-kelime kategorisinde gecen, oldugu gibi kalmasi gerekenler
+    "full buy", "drop", "fake", "swing", "post plant", "nt", "wp", "stack",
+    "bonus", "save", "info", "trade", "lurk", "dry", "stall", "bait",
 }
 
 
